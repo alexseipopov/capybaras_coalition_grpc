@@ -4,7 +4,10 @@ package coalition_service;
 
 service CoalitionService {
   rpc set_coalition_member(SetCoalitionMemberRequest) returns (SetCoalitionMemberResponse) {}
+  rpc reset_all_members(Empty) returns (Empty) {}
 }
+
+message Empty {}
 
 message SetCoalitionMemberRequest {
   string login = 1;
