@@ -8,7 +8,7 @@ service CoalitionService {
 
 message SetCoalitionMemberRequest {
   string login = 1;
-  string description = 2;
+  string school_user_id = 2;
 }
 
 message SetCoalitionMemberResponse {
