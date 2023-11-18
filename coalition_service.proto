@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package coalition_service;
+
+service CoalitionService {
+  rpc set_coalition_member(SetCoalitionMemberRequest) returns (SetCoalitionMemberResponse) {}
+}
+
+message SetCoalitionMemberRequest {
+  string login = 1;
+  string description = 2;
+}
+
+message SetCoalitionMemberResponse {
+  int32 status = 1;
+  string description = 2;
+  bool is_new_member = 3;
+}

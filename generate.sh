@@ -1,0 +1,1 @@
+python -m grpc_tools.protoc -I. --python_out=./coalition_service --grpc_python_out=./coalition_service coalition_service.proto
