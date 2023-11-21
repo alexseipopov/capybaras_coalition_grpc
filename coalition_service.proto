@@ -5,6 +5,8 @@ package coalition_service;
 service CoalitionService {
   rpc set_coalition_member(SetCoalitionMemberRequest) returns (SetCoalitionMemberResponse) {}
   rpc reset_all_members(Empty) returns (Empty) {}
+  rpc get_member_by_tg_id(GetMemberByTgIdRequest) returns (GetMemberByTgIdResponse) {}
+  rpc set_tg_id_by_key(SetTgIdByKeyRequest) returns (SetTgIdByKeyResponse) {}
 }
 
 message Empty {}
@@ -18,4 +20,25 @@ message SetCoalitionMemberResponse {
   int32 status = 1;
   string description = 2;
   bool is_new_member = 3;
+}
+
+message GetMemberByTgIdRequest {
+  int32 tg_id = 1;
+}
+
+message GetMemberByTgIdResponse {
+  string login = 1;
+  string school_user_id = 2;
+  int32 status = 3;
+  string description = 4;
+}
+
+message SetTgIdByKeyRequest {
+  string key = 1;
+  int32 tg_id = 2;
+}
+
+message SetTgIdByKeyResponse {
+  int32 status = 1;
+  string description = 2;
 }

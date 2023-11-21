@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x63oalition_service.proto\x12\x11\x63oalition_service\"\x07\n\x05\x45mpty\"B\n\x19SetCoalitionMemberRequest\x12\r\n\x05login\x18\x01 \x01(\t\x12\x16\n\x0eschool_user_id\x18\x02 \x01(\t\"X\n\x1aSetCoalitionMemberResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x15\n\ris_new_member\x18\x03 \x01(\x08\x32\xd4\x01\n\x10\x43oalitionService\x12u\n\x14set_coalition_member\x12,.coalition_service.SetCoalitionMemberRequest\x1a-.coalition_service.SetCoalitionMemberResponse\"\x00\x12I\n\x11reset_all_members\x12\x18.coalition_service.Empty\x1a\x18.coalition_service.Empty\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x63oalition_service.proto\x12\x11\x63oalition_service\"\x07\n\x05\x45mpty\"B\n\x19SetCoalitionMemberRequest\x12\r\n\x05login\x18\x01 \x01(\t\x12\x16\n\x0eschool_user_id\x18\x02 \x01(\t\"X\n\x1aSetCoalitionMemberResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x15\n\ris_new_member\x18\x03 \x01(\x08\"\'\n\x16GetMemberByTgIdRequest\x12\r\n\x05tg_id\x18\x01 \x01(\x05\"e\n\x17GetMemberByTgIdResponse\x12\r\n\x05login\x18\x01 \x01(\t\x12\x16\n\x0eschool_user_id\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\"1\n\x13SetTgIdByKeyRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05tg_id\x18\x02 \x01(\x05\";\n\x14SetTgIdByKeyResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t2\xab\x03\n\x10\x43oalitionService\x12u\n\x14set_coalition_member\x12,.coalition_service.SetCoalitionMemberRequest\x1a-.coalition_service.SetCoalitionMemberResponse\"\x00\x12I\n\x11reset_all_members\x12\x18.coalition_service.Empty\x1a\x18.coalition_service.Empty\"\x00\x12n\n\x13get_member_by_tg_id\x12).coalition_service.GetMemberByTgIdRequest\x1a*.coalition_service.GetMemberByTgIdResponse\"\x00\x12\x65\n\x10set_tg_id_by_key\x12&.coalition_service.SetTgIdByKeyRequest\x1a\'.coalition_service.SetTgIdByKeyResponse\"\x00\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -26,6 +26,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_SETCOALITIONMEMBERREQUEST']._serialized_end=121
   _globals['_SETCOALITIONMEMBERRESPONSE']._serialized_start=123
   _globals['_SETCOALITIONMEMBERRESPONSE']._serialized_end=211
-  _globals['_COALITIONSERVICE']._serialized_start=214
-  _globals['_COALITIONSERVICE']._serialized_end=426
+  _globals['_GETMEMBERBYTGIDREQUEST']._serialized_start=213
+  _globals['_GETMEMBERBYTGIDREQUEST']._serialized_end=252
+  _globals['_GETMEMBERBYTGIDRESPONSE']._serialized_start=254
+  _globals['_GETMEMBERBYTGIDRESPONSE']._serialized_end=355
+  _globals['_SETTGIDBYKEYREQUEST']._serialized_start=357
+  _globals['_SETTGIDBYKEYREQUEST']._serialized_end=406
+  _globals['_SETTGIDBYKEYRESPONSE']._serialized_start=408
+  _globals['_SETTGIDBYKEYRESPONSE']._serialized_end=467
+  _globals['_COALITIONSERVICE']._serialized_start=470
+  _globals['_COALITIONSERVICE']._serialized_end=897
 # @@protoc_insertion_point(module_scope)
