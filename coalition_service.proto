@@ -7,6 +7,7 @@ service CoalitionService {
   rpc reset_all_members(Empty) returns (Empty) {}
   rpc get_member_by_tg_id(GetMemberByTgIdRequest) returns (GetMemberByTgIdResponse) {}
   rpc set_tg_id_by_key(SetTgIdByKeyRequest) returns (SetTgIdByKeyResponse) {}
+//  rpc get_reviewers(Empty) returns (GetRewieversResponse) {}
 }
 
 message Empty {}
@@ -14,6 +15,7 @@ message Empty {}
 message SetCoalitionMemberRequest {
   string login = 1;
   string school_user_id = 2;
+  string tribe = 3;
 }
 
 message SetCoalitionMemberResponse {
