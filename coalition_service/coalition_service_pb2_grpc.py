@@ -34,6 +34,11 @@ class CoalitionServiceStub(object):
                 request_serializer=coalition__service__pb2.SetTgIdByKeyRequest.SerializeToString,
                 response_deserializer=coalition__service__pb2.SetTgIdByKeyResponse.FromString,
                 )
+        self.get_members = channel.unary_unary(
+                '/coalition_service.CoalitionService/get_members',
+                request_serializer=coalition__service__pb2.GetMembersRequest.SerializeToString,
+                response_deserializer=coalition__service__pb2.GetMembersResponse.FromString,
+                )
 
 
 class CoalitionServiceServicer(object):
@@ -63,6 +68,12 @@ class CoalitionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def get_members(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoalitionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -85,6 +96,11 @@ def add_CoalitionServiceServicer_to_server(servicer, server):
                     servicer.set_tg_id_by_key,
                     request_deserializer=coalition__service__pb2.SetTgIdByKeyRequest.FromString,
                     response_serializer=coalition__service__pb2.SetTgIdByKeyResponse.SerializeToString,
+            ),
+            'get_members': grpc.unary_unary_rpc_method_handler(
+                    servicer.get_members,
+                    request_deserializer=coalition__service__pb2.GetMembersRequest.FromString,
+                    response_serializer=coalition__service__pb2.GetMembersResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -161,5 +177,22 @@ class CoalitionService(object):
         return grpc.experimental.unary_unary(request, target, '/coalition_service.CoalitionService/set_tg_id_by_key',
             coalition__service__pb2.SetTgIdByKeyRequest.SerializeToString,
             coalition__service__pb2.SetTgIdByKeyResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def get_members(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/coalition_service.CoalitionService/get_members',
+            coalition__service__pb2.GetMembersRequest.SerializeToString,
+            coalition__service__pb2.GetMembersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

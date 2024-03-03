@@ -7,6 +7,7 @@ service CoalitionService {
   rpc reset_all_members(Empty) returns (Empty) {}
   rpc get_member_by_tg_id(GetMemberByTgIdRequest) returns (GetMemberByTgIdResponse) {}
   rpc set_tg_id_by_key(SetTgIdByKeyRequest) returns (SetTgIdByKeyResponse) {}
+  rpc get_members(GetMembersRequest) returns (GetMembersResponse) {}
 //  rpc get_reviewers(Empty) returns (GetRewieversResponse) {}
 }
 
@@ -43,4 +44,21 @@ message SetTgIdByKeyRequest {
 message SetTgIdByKeyResponse {
   int32 status = 1;
   string description = 2;
+}
+
+message GetMembersRequest {
+  string nickname = 1;
+}
+
+message Member {
+  string login = 1;
+  string school_user_id = 2;
+  string tribe = 3;
+  int32 tg_id = 4;
+}
+
+message GetMembersResponse {
+  repeated Member members = 1;
+  int32 status = 2;
+  string description = 3;
 }
